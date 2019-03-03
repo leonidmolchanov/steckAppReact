@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Steck App</title>
+</head>
+
+<body>
+<div id="root">
+
+</div>
+<script src="//api.bitrix24.com/api/v1/"></script>
+<script>
+
+    BX24.ready(function() {
+        const script = document.createElement('script')
+        script.src = 'index-bundle.js'
+
+        document.body.append(script)
+
+    })
+</script>
+</body>
+
+</html>

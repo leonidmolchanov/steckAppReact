@@ -1,0 +1,9 @@
+h1 {
+    color: #27aedb;
+    text-align: center;
+}
+
+th, td {
+    text-align: center;
+    vertical-align: middle !important;
+}
