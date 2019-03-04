@@ -37,9 +37,8 @@ class TableContent extends Component {
     <td><strong>Дела</strong></td>
 </tr>
         let tableTemplate;
-console.log(this.props.content)
         tableTemplate = this.props.content.map((row, i) => {
-            return <tr key={i}><td>{row['name']}</td><td>{row['taskDo'] && this.props.checkBoxTasks ? (row['taskDo']):('-')}</td><td>{row['taskEnd'] && this.props.checkBoxTasks ? (row['taskEnd']):('-')}</td><td>1</td><td>{row['leads'] && this.props.checkBoxCRM ? (row['leads']):('-')}</td><td>{row['activitys'] && this.props.checkBoxCRM ? (row['activitys']):('-')}</td><td>{row['contacts'] && this.props.checkBoxCRM ? (row['contacts']):('-')}</td><td>{row['deals'] && this.props.checkBoxCRM ? (row['deals']):('-')}</td><td>{row['blogposts'] && this.props.checkBoxCRM ? (row['blogposts']):('-')}</td></tr>
+            return <tr key={i}><td>{row['name']}</td><td>{row['taskDo'] && this.props.checkBoxTasks ? (row['taskDo']):('-')}</td><td>{row['taskEnd'] && this.props.checkBoxTasks ? (row['taskEnd']):('-')}</td><td>1</td><td>{(row['leadsClose'] || row['leadsOpen']) && this.props.checkBoxCRM ? (row['leadsClose']+'('+row['leadsOpen']+')'):('-')}</td><td>{(row['activitysOpen'] || row['activitysClose']) && this.props.checkBoxCRM ? (row['activitysOpen']+'('+row['activitysClose']+')'):('-')}</td><td>{row['contacts'] && this.props.checkBoxCRM ? (row['contacts']):('-')}</td><td>{(row['dealsOpen'] || row['dealsClose']) && this.props.checkBoxCRM ? (row['dealsOpen']+'('+row['dealsClose']+')'):('-')}</td><td>{row['blogposts'] && this.props.checkBoxLine ? (row['blogposts']):('-')}</td></tr>
         })
         return (
             <Row style={divStyle}>
